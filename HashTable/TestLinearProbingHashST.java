@@ -3,7 +3,7 @@ package HashTable;
 /**
  * Created by Silocean on 2016-04-17.
  */
-public class Test {
+public class TestLinearProbingHashST {
     public static void main(String[] args) {
         LinearProbingHashST<Character, Integer> l = new LinearProbingHashST<>();
         String str = "SEARCHEXAMPLE";
