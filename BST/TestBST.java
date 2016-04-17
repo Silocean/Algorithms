@@ -1,3 +1,5 @@
+package BST;
+
 /**
  * Created by Silocean on 2016-03-14.
  */

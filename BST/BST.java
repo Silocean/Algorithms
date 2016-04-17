@@ -1,3 +1,5 @@
+package BST;
+
 /**
  * 二叉查找树
  * Created by Silocean on 2016-03-17.
