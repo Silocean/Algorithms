@@ -5,7 +5,7 @@ import java.util.Iterator;
 /**
  * Created by Silocean on 2016-04-19.
  */
-public class ResizingArrayStack<Item> implements Iterator<Item> {
+public class ResizingArrayStack<Item> {
     private Item[] a = (Item[]) new Object[1]; // 栈元素列表
     private int N = 0; // 元素数量
     private int index = N;
@@ -53,18 +53,27 @@ public class ResizingArrayStack<Item> implements Iterator<Item> {
         return item;
     }
 
-    @Override
-    public boolean hasNext() {
-        return index > 0;
+    public Iterator<Item> iterator() {
+        return new ReverseArrayIterator();
     }
 
-    @Override
-    public Item next() {
-        return a[--index];
+    private class ReverseArrayIterator implements Iterator<Item> {
+        int i = N;
+
+        @Override
+        public boolean hasNext() {
+            return i > 0;
+        }
+
+        @Override
+        public Item next() {
+            return a[--i];
+        }
+
+        @Override
+        public void remove() {
+
+        }
     }
 
-    @Override
-    public void remove() {
-
-    }
 }
