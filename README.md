@@ -1,2 +1,2 @@
 # Algorithms
-code in 《Algorithms》
+some common algorithms in 《Algorithms》
