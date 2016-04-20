@@ -5,7 +5,7 @@ import java.util.Iterator;
 /**
  * Created by Silocean on 2016-04-19.
  */
-public class ResizingArrayStack<Item> {
+public class ResizingArrayStack<Item> implements Iterable {
     private Item[] a = (Item[]) new Object[1]; // 栈元素列表
     private int N = 0; // 元素数量
     private int index = N;
