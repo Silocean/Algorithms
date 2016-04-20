@@ -1,6 +1,7 @@
 package Graph;
 
 /**
+ * 邻接表数组实现的graph数据类型
  * Created by Silocean on 2016-04-20.
  */
 public class Graph {
