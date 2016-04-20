@@ -3,6 +3,7 @@ package Stack;
 import java.util.Iterator;
 
 /**
+ * 用链表实现的栈
  * Created by Silocean on 2016-04-20.
  */
 public class LinkedListStack<Item> implements Iterable {
