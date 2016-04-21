@@ -108,4 +108,8 @@ public class LinearProbingHashST<Key, Value> {
         values = t.values;
         M = t.M;
     }
+
+    public int size() {
+        return N;
+    }
 }
