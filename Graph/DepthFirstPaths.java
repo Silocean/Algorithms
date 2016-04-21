@@ -1,5 +1,7 @@
 package Graph;
 
+import Stack.LinkedListStack;
+
 /**
  * 使用深度优先搜索查找图中的路径
  * Created by Silocean on 2016-04-21.
@@ -44,7 +46,7 @@ public class DepthFirstPaths {
      */
     public Iterable<Integer> pathTo(int v) {
         if (!hasPathTo(v)) return null;
-        LinkedListStack<Integer> paths = new LinkedListStack<Integer>();
+        LinkedListStack<Integer> paths = new LinkedListStack();
         for (int x = v; x != s; x = edgeTo[x]) {
             paths.push(x);
         }
