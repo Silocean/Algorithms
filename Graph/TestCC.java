@@ -12,13 +12,7 @@ import java.io.IOException;
 public class TestCC {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new FileReader("src/Graph/G.txt"));
-        int v = Integer.parseInt(br.readLine());
-        int e = Integer.parseInt(br.readLine());
-        Graph graph = new Graph(v);
-        for (int i = 0; i < e; i++) {
-            String[] splits = br.readLine().split(" ");
-            graph.addEdge(Integer.parseInt(splits[0]), Integer.parseInt(splits[1]));
-        }
+        Graph graph = new Graph(br);
         CC cc = new CC(graph);
         int M = cc.count();
         System.out.println(M + " components");
@@ -26,12 +20,12 @@ public class TestCC {
         for (int i = 0; i < M; i++) {
             components[i] = new Bag<Integer>();
         }
-        for (int i = 0; i < graph.V(); i++) {
-            components[cc.id(i)].add(i);
+        for (int v = 0; v < graph.V(); v++) {
+            components[cc.id(v)].add(v);
         }
         for (int i = 0; i < M; i++) {
-            for (int x : components[i]) {
-                System.out.print(x + " ");
+            for (int v : components[i]) {
+                System.out.print(v + " ");
             }
             System.out.println();
         }

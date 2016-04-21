@@ -2,6 +2,9 @@ package Graph;
 
 import Bag.Bag;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+
 /**
  * 邻接表数组实现的graph数据类型
  * Created by Silocean on 2016-04-20.
@@ -17,6 +20,15 @@ public class Graph {
         adj = (Bag<Integer>[]) new Bag[V];
         for (int v = 0; v < V; v++) {
             adj[v] = new Bag<Integer>();
+        }
+    }
+
+    public Graph(BufferedReader br) throws IOException {
+        this(Integer.parseInt(br.readLine()));
+        int e = Integer.parseInt(br.readLine());
+        for (int i = 0; i < e; i++) {
+            String[] splits = br.readLine().split(" ");
+            addEdge(Integer.parseInt(splits[0]), Integer.parseInt(splits[1]));
         }
     }
 
