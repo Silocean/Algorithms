@@ -1,6 +1,5 @@
 package test;
 
-import unionFind.QuickUnion;
 import unionFind.WeightedQuickUnion;
 
 import java.io.BufferedReader;
