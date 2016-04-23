@@ -12,7 +12,7 @@ import java.io.IOException;
  */
 public class TestCycle {
     public static void main(String[] args) throws IOException {
-        BufferedReader br = new BufferedReader(new FileReader("src/Graph/G.txt"));
+        BufferedReader br = new BufferedReader(new FileReader("src/test/G.txt"));
         Graph graph = new Graph(br);
         Cycle cycle = new Cycle(graph);
         System.out.println(cycle.hasCycle());

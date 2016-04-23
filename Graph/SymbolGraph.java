@@ -16,7 +16,7 @@ public class SymbolGraph {
     private Graph graph; // 图
 
     public SymbolGraph(BufferedReader br, String sp) throws IOException {
-        br = new BufferedReader(new FileReader("src/Graph/movies.txt"));
+        br = new BufferedReader(new FileReader("src/test/movies.txt"));
         map = new HashMap<>();
         String string;
         while ((string = br.readLine()) != null) { // 构造索引

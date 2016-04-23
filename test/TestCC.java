@@ -13,7 +13,7 @@ import java.io.IOException;
  */
 public class TestCC {
     public static void main(String[] args) throws IOException {
-        BufferedReader br = new BufferedReader(new FileReader("src/Graph/G.txt"));
+        BufferedReader br = new BufferedReader(new FileReader("src/test/G.txt"));
         Graph graph = new Graph(br);
         CC cc = new CC(graph);
         int M = cc.count();
