@@ -1,4 +1,6 @@
-package Stack;
+package test;
+
+import stack.LinkedListStack;
 
 import java.util.Iterator;
 

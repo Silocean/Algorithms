@@ -1,4 +1,7 @@
-package Graph;
+package test;
+
+import graph.BreadthFirstPaths;
+import graph.Graph;
 
 /**
  * Created by Silocean on 2016-04-21.

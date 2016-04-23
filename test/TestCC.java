@@ -1,6 +1,8 @@
-package Graph;
+package test;
 
-import Bag.Bag;
+import bag.Bag;
+import graph.CC;
+import graph.Graph;
 
 import java.io.BufferedReader;
 import java.io.FileReader;

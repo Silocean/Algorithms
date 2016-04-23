@@ -1,4 +1,6 @@
-package HashTable;
+package test;
+
+import hashTable.LinearProbingHashST;
 
 /**
  * Created by Silocean on 2016-04-17.

@@ -1,4 +1,4 @@
-package PriorityQueue;
+package priorityQueue;
 
 /**
  * 优先队列

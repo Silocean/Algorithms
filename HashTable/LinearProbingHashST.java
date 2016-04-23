@@ -1,4 +1,4 @@
-package HashTable;
+package hashTable;
 
 /**
  * 基于线性探测的符号表

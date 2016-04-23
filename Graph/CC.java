@@ -1,4 +1,4 @@
-package Graph;
+package graph;
 
 /**
  * 使用深度优先搜索找出图中的所有连通分量

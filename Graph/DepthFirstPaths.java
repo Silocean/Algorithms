@@ -1,6 +1,6 @@
-package Graph;
+package graph;
 
-import Stack.LinkedListStack;
+import stack.LinkedListStack;
 
 /**
  * 使用深度优先搜索查找图中的路径

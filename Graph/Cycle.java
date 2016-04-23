@@ -1,4 +1,4 @@
-package Graph;
+package graph;
 
 /**
  * Created by Silocean on 2016-04-21.

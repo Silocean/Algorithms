@@ -1,7 +1,7 @@
-package Graph;
+package graph;
 
-import Queue.Queue;
-import Stack.LinkedListStack;
+import queue.Queue;
+import stack.LinkedListStack;
 
 /**
  * 使用广度优先搜索查找图中的路径

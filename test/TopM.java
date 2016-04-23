@@ -1,4 +1,6 @@
-package PriorityQueue;
+package test;
+
+import priorityQueue.MaxPriorityQueue;
 
 import java.util.Scanner;
 import java.util.Stack;

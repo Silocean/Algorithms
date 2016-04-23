@@ -1,4 +1,7 @@
-package Graph;
+package test;
+
+import graph.Cycle;
+import graph.Graph;
 
 import java.io.BufferedReader;
 import java.io.FileReader;

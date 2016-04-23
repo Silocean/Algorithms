@@ -1,4 +1,7 @@
-package Graph;
+package test;
+
+import graph.Graph;
+import graph.TwoColor;
 
 import java.io.BufferedReader;
 import java.io.FileReader;

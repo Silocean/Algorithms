@@ -1,4 +1,6 @@
-package Graph;
+package test;
+
+import graph.Graph;
 
 /**
  * Created by Silocean on 2016-04-20.

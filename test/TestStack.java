@@ -1,4 +1,6 @@
-package Stack;
+package test;
+
+import stack.ResizingArrayStack;
 
 import java.util.Iterator;
 

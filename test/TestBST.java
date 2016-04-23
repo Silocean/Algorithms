@@ -1,4 +1,6 @@
-package BST;
+package test;
+
+import bst.BST;
 
 /**
  * Created by Silocean on 2016-03-14.

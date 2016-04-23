@@ -1,4 +1,7 @@
-package Graph;
+package test;
+
+import graph.Graph;
+import graph.SymbolGraph;
 
 import java.io.BufferedReader;
 

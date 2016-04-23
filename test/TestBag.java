@@ -1,4 +1,6 @@
-package Bag;
+package test;
+
+import bag.Bag;
 
 import java.util.Iterator;
 

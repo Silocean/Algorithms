@@ -1,6 +1,6 @@
-package Graph;
+package graph;
 
-import Bag.Bag;
+import bag.Bag;
 
 import java.io.BufferedReader;
 import java.io.IOException;

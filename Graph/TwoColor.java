@@ -1,4 +1,4 @@
-package Graph;
+package graph;
 
 /**
  * 判断图是否是二分图
