@@ -34,7 +34,7 @@ public class SymbolGraph {
         }
 
         graph = new Graph(map.size());
-        br = new BufferedReader(new FileReader("src/Graph/movies.txt"));
+        br = new BufferedReader(new FileReader("src/test/movies.txt"));
         String str;
         while ((str = br.readLine()) != null) { // 将每一个行的第一个顶点和该行的其他顶点相连
             String[] splits = str.split(sp);
