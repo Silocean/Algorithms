@@ -14,6 +14,11 @@ public class Graph {
     private int E; // 边的数目
     private Bag<Integer>[] adj; //邻接表
 
+    /**
+     * 创建一个含有V个顶点但不含有边的图
+     *
+     * @param V
+     */
     public Graph(int V) {
         this.V = V;
         this.E = 0;
@@ -23,6 +28,12 @@ public class Graph {
         }
     }
 
+    /**
+     * 从输入流中读入一幅图
+     *
+     * @param br
+     * @throws IOException
+     */
     public Graph(BufferedReader br) throws IOException {
         this(Integer.parseInt(br.readLine()));
         int e = Integer.parseInt(br.readLine());
@@ -40,12 +51,24 @@ public class Graph {
         return E;
     }
 
+    /**
+     * 向图中添加一条边v-w
+     *
+     * @param v
+     * @param w
+     */
     public void addEdge(int v, int w) {
         adj[v].add(w);
         adj[w].add(v);
         E++;
     }
 
+    /**
+     * 和v相邻的所有顶点
+     *
+     * @param v
+     * @return
+     */
     public Iterable<Integer> adj(int v) {
         return adj[v];
     }
