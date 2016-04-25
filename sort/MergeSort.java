@@ -18,7 +18,7 @@ public class MergeSort {
         }
     }
 
-    public static void sort(Comparable[] a, int lo, int hi) {
+    private static void sort(Comparable[] a, int lo, int hi) {
         if (lo >= hi) return;
         int mid = (lo + hi) / 2;
         sort(a, lo, mid); // 将左半边排序
@@ -26,7 +26,7 @@ public class MergeSort {
         merge(lo, mid, hi); // 归并结果
     }
 
-    public static void merge(int lo, int mid, int hi) {
+    private static void merge(int lo, int mid, int hi) {
         int i = lo;
         int j = mid + 1;
         for (int k = lo; k <= hi; k++) { // 把a[lo..hi]复制到aux[lo..hi]
@@ -45,7 +45,7 @@ public class MergeSort {
         }
     }
 
-    public static boolean less(Comparable v, Comparable w) {
+    private static boolean less(Comparable v, Comparable w) {
         return v.compareTo(w) < 0;
     }
 }
