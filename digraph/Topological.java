@@ -1,26 +1,10 @@
 package digraph;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-
 /**
  * 拓扑排序
  * Created by Silocean on 2016-04-25.
  */
 public class Topological {
-
-    public static void main(String[] args) throws Exception {
-        BufferedReader br = new BufferedReader(new FileReader("src/test/DG2.txt"));
-        Digraph digraph = new Digraph(br);
-        Topological topological = new Topological(digraph);
-        if (topological.isDAG()) {
-            for (int v : topological.order()) {
-                System.out.print(v + " ");
-            }
-        } else {
-            System.out.println("Digraph is not a DAG!");
-        }
-    }
 
     private Iterable<Integer> order; // 顶点的拓扑排序
 
