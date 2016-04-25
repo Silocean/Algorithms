@@ -7,20 +7,20 @@ public class Cycle {
     private boolean[] marked;
     private boolean hasCycle;
 
-    public Cycle(Graph graph) {
-        marked = new boolean[graph.V()];
-        for (int s = 0; s < graph.V(); s++) {
+    public Cycle(Graph G) {
+        marked = new boolean[G.V()];
+        for (int s = 0; s < G.V(); s++) {
             if (!marked[s]) {
-                dfs(graph, s, s);
+                dfs(G, s, s);
             }
         }
     }
 
-    private void dfs(Graph graph, int v, int u) {
+    private void dfs(Graph G, int v, int u) {
         marked[v] = true;
-        for (int w : graph.adj(v)) {
+        for (int w : G.adj(v)) {
             if (!marked[w]) {
-                dfs(graph, w, v);
+                dfs(G, w, v);
             } else if (w != u) {
                 hasCycle = true;
             }

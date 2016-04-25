@@ -11,19 +11,19 @@ public class DepthFirstPaths {
     private int[] edgeTo; // 从起点到一个顶点的已知路径上的最后一个顶点
     private final int s; // 起点
 
-    public DepthFirstPaths(Graph graph, int s) {
-        marked = new boolean[graph.V()];
-        edgeTo = new int[graph.V()];
+    public DepthFirstPaths(Graph G, int s) {
+        marked = new boolean[G.V()];
+        edgeTo = new int[G.V()];
         this.s = s;
-        dfs(graph, s);
+        dfs(G, s);
     }
 
-    private void dfs(Graph graph, int v) {
+    private void dfs(Graph G, int v) {
         marked[v] = true;
-        for (int w : graph.adj(v)) {
+        for (int w : G.adj(v)) {
             if (!marked[w]) {
                 edgeTo[w] = v;
-                dfs(graph, w);
+                dfs(G, w);
             }
         }
     }

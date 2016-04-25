@@ -13,7 +13,7 @@ import java.util.Map;
 public class SymbolGraph {
     private Map<String, Integer> map; // 符号名->索引
     private String[] keys; // 索引->符号名
-    private Graph graph; // 图
+    private Graph G; // 图
 
     public SymbolGraph(BufferedReader br, String sp) throws IOException {
         br = new BufferedReader(new FileReader("src/test/movies.txt"));
@@ -33,14 +33,14 @@ public class SymbolGraph {
             keys[map.get(name)] = name;
         }
 
-        graph = new Graph(map.size());
+        G = new Graph(map.size());
         br = new BufferedReader(new FileReader("src/test/movies.txt"));
         String str;
         while ((str = br.readLine()) != null) { // 将每一个行的第一个顶点和该行的其他顶点相连
             String[] splits = str.split(sp);
             int v = map.get(splits[0]);
             for (int i = 1; i < splits.length; i++) {
-                graph.addEdge(v, map.get(splits[i]));
+                G.addEdge(v, map.get(splits[i]));
             }
         }
     }
@@ -58,7 +58,7 @@ public class SymbolGraph {
     }
 
     public Graph G() {
-        return graph;
+        return G;
     }
 
 }

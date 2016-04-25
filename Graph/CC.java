@@ -9,23 +9,23 @@ public class CC {
     private int[] id;
     private int count;
 
-    public CC(Graph graph) {
-        marked = new boolean[graph.V()];
-        id = new int[graph.V()];
-        for (int s = 0; s < graph.V(); s++) {
+    public CC(Graph G) {
+        marked = new boolean[G.V()];
+        id = new int[G.V()];
+        for (int s = 0; s < G.V(); s++) {
             if (!marked[s]) {
-                dfs(graph, s);
+                dfs(G, s);
                 count++;
             }
         }
     }
 
-    private void dfs(Graph graph, int v) {
+    private void dfs(Graph G, int v) {
         marked[v] = true;
         id[v] = count;
-        for (int w : graph.adj(v)) {
+        for (int w : G.adj(v)) {
             if (!marked[w]) {
-                dfs(graph, w);
+                dfs(G, w);
             }
         }
     }
