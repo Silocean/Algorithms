@@ -12,20 +12,20 @@ public class BreadthFirstDirectedPaths {
     private int[] edgeTo; // 到达该顶点的已知路径上的最后一个顶点
     private final int s; // 起点
 
-    public BreadthFirstDirectedPaths(Digraph digraph, int s) {
-        marked = new boolean[digraph.V()];
-        edgeTo = new int[digraph.V()];
+    public BreadthFirstDirectedPaths(Digraph G, int s) {
+        marked = new boolean[G.V()];
+        edgeTo = new int[G.V()];
         this.s = s;
-        bfs(digraph, s);
+        bfs(G, s);
     }
 
-    private void bfs(Digraph digraph, int s) {
+    private void bfs(Digraph G, int s) {
         Queue<Integer> queue = new Queue<Integer>();
         marked[s] = true; // 标记起点
         queue.enqueue(s); // 将它加入队列
         while (!queue.isEmpty()) {
             int v = queue.dequeue(); // 从队列中删除下一顶点
-            for (int w : digraph.adj(v)) {
+            for (int w : G.adj(v)) {
                 if (!marked[w]) { // 对于每个未被标记的相邻顶点
                     edgeTo[w] = v; // 保存最短路径的最后的一条边
                     marked[w] = true; // 标记它，因为最短路径已知

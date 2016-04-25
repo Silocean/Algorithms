@@ -11,19 +11,19 @@ public class DepthFirstDirectedPaths {
     private int[] edgeTo; // 从起点到一个顶点的已知路径上的最后一个顶点
     private final int s; // 起点
 
-    public DepthFirstDirectedPaths(Digraph digraph, int s) {
-        marked = new boolean[digraph.V()];
-        edgeTo = new int[digraph.V()];
+    public DepthFirstDirectedPaths(Digraph G, int s) {
+        marked = new boolean[G.V()];
+        edgeTo = new int[G.V()];
         this.s = s;
-        dfs(digraph, s);
+        dfs(G, s);
     }
 
-    private void dfs(Digraph digraph, int v) {
+    private void dfs(Digraph G, int v) {
         marked[v] = true;
-        for (int w : digraph.adj(v)) {
+        for (int w : G.adj(v)) {
             if (!marked[w]) {
                 edgeTo[w] = v;
-                dfs(digraph, w);
+                dfs(G, w);
             }
         }
     }

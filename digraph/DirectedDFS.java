@@ -10,34 +10,34 @@ public class DirectedDFS {
     /**
      * 从digraph中找出s可达的所有顶点
      *
-     * @param digraph
+     * @param G
      * @param s
      */
-    public DirectedDFS(Digraph digraph, int s) {
-        marked = new boolean[digraph.V()];
-        dfs(digraph, s);
+    public DirectedDFS(Digraph G, int s) {
+        marked = new boolean[G.V()];
+        dfs(G, s);
     }
 
     /**
      * 从digraph中找到从sources中的所有顶点可达的所有顶点
      *
-     * @param digraph
+     * @param G
      * @param sources
      */
-    public DirectedDFS(Digraph digraph, Iterable<Integer> sources) {
-        marked = new boolean[digraph.V()];
+    public DirectedDFS(Digraph G, Iterable<Integer> sources) {
+        marked = new boolean[G.V()];
         for (int s : sources) {
             if (!marked[s]) {
-                dfs(digraph, s);
+                dfs(G, s);
             }
         }
     }
 
-    private void dfs(Digraph digraph, int v) {
+    private void dfs(Digraph G, int v) {
         marked[v] = true;
-        for (int w : digraph.adj(v)) {
+        for (int w : G.adj(v)) {
             if (!marked[w]) {
-                dfs(digraph, w);
+                dfs(G, w);
             }
         }
     }
