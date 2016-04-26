@@ -3,7 +3,6 @@ package sort;
 /**
  * 三向切分的快速排序
  * （对于存在大量重复元素的数组，这种方法比标准的快速排序的效率搞的多）
- * 
  * Created by Silocean on 2016-04-26.
  */
 public class Quick3waySort {
