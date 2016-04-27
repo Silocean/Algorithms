@@ -89,12 +89,7 @@ public class LinearProbingHashST<Key, Value> {
     }
 
     public boolean contains(Key key) {
-        for (int i = hash(key); keys[i] != null; i = (i + 1) % M) {
-            if (keys[i].equals(key)) {
-                return true;
-            }
-        }
-        return false;
+        return get(key) != null;
     }
 
     private void resize(int cap) {
