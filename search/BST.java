@@ -1,4 +1,4 @@
-package bst;
+package search;
 
 /**
  * 二叉查找树
