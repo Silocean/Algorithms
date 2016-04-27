@@ -15,5 +15,7 @@ public class TestLinearProbingHashST {
 
         System.out.println(l.get('E'));
 
+        System.out.println(l.contains('Z'));
+
     }
 }
