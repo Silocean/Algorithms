@@ -17,10 +17,10 @@ public class HeapSort {
 
     public static void heapSort(Comparable[] a) {
         int N = a.length - 1;
-        for (int k = N / 2; k >= 1; k--) {
+        for (int k = N / 2; k >= 1; k--) { // 堆的构造
             sink(k, N);
         }
-        while (N > 1) {
+        while (N > 1) { // 下沉排序
             exch(1, N--);
             sink(1, N);
         }
