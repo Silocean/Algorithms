@@ -1,5 +1,7 @@
 package search;
 
+import queue.Queue;
+
 /**
  * 顺序查找（基于无序链表）
  * Created by Silocean on 2016-04-27.
@@ -49,6 +51,13 @@ public class SequentialSearchST<Key, Value> {
             }
         }
         first = new Node(key, value, first); // 未命中，新建节点（插入链表头）
+    }
+
+    public Iterable<Key> keys()  {
+        Queue<Key> queue = new Queue<Key>();
+        for (Node x = first; x != null; x = x.next)
+            queue.enqueue(x.key);
+        return queue;
     }
 
 }
