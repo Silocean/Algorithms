@@ -1,7 +1,7 @@
 package search;
 
 /**
- * 无序链表（顺序查找）
+ * 顺序查找（基于无序链表）
  * Created by Silocean on 2016-04-27.
  */
 public class SequentialSearchST<Key, Value> {
