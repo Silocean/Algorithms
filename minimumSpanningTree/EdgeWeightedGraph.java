@@ -25,9 +25,9 @@ public class EdgeWeightedGraph {
 
     public EdgeWeightedGraph(BufferedReader br) throws Exception {
         this(Integer.parseInt(br.readLine().split(" ")[0]));
-        int e = Integer.parseInt(br.readLine().split(" ")[1]);
-        for (int i = 0; i < e; i++) {
-            String[] splits = br.readLine().split(" ");
+        String line = "";
+        while ((line = br.readLine()) != null) {
+            String[] splits = line.split(" ");
             Edge edge = new Edge(Integer.parseInt(splits[0]), Integer.parseInt(splits[1]),
                     Double.parseDouble(splits[2]));
             addEdge(edge);
@@ -80,5 +80,18 @@ public class EdgeWeightedGraph {
             }
         }
         return b;
+    }
+
+    @Override
+    public String toString() {
+        String str = V + "vertices, " + E + " edges\n";
+        for (int v = 0; v < V; v++) {
+            str += v + ": ";
+            for (Edge e : adj(v)) {
+                str += e.toString() + ";";
+            }
+            str += "\n";
+        }
+        return str;
     }
 }
