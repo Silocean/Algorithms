@@ -2,6 +2,8 @@ package minimumSpanningTree;
 
 import bag.Bag;
 
+import java.io.BufferedReader;
+
 /**
  * 加权无向图
  * Created by Silocean on 2016-04-28.
@@ -18,6 +20,17 @@ public class EdgeWeightedGraph {
         adj = (Bag<Edge>[]) new Bag[V];
         for (int v = 0; v < V; v++) {
             adj[v] = new Bag<>();
+        }
+    }
+
+    public EdgeWeightedGraph(BufferedReader br) throws Exception {
+        this(Integer.parseInt(br.readLine().split(" ")[0]));
+        int e = Integer.parseInt(br.readLine().split(" ")[1]);
+        for (int i = 0; i < e; i++) {
+            String[] splits = br.readLine().split(" ");
+            Edge edge = new Edge(Integer.parseInt(splits[0]), Integer.parseInt(splits[1]),
+                    Double.parseDouble(splits[2]));
+            addEdge(edge);
         }
     }
 

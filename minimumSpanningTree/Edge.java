@@ -10,7 +10,7 @@ public class Edge implements Comparable<Edge> {
     private final int w; // 另一个顶点
     private final double weight; // 边的权重
 
-    public Edge(int v, int w, int weight) {
+    public Edge(int v, int w, double weight) {
         this.v = v;
         this.w = w;
         this.weight = weight;
