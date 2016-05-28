@@ -12,10 +12,15 @@ public class TestTrieST {
         st.put("sea", 6);
         st.put("sells", 1);
         st.put("shells", 3);
-        st.put("sho", 0);
+        st.put("she", 0);
         st.put("shore", 7);
         st.put("the", 5);
-        for (String s : st.keysWithPrefix("sh")) {
+        for (String s : st.keys()) {
+            System.out.println(s);
+        }
+        st.delete("she");
+        System.out.println("==================");
+        for (String s : st.keys()) {
             System.out.println(s);
         }
     }

@@ -101,4 +101,68 @@ public class TrieST<Value> {
         }
     }
 
+    /**
+     * s的前缀中最长的键
+     *
+     * @param s
+     * @return
+     */
+    public String longestPrefixOf(String s) {
+        int length = search(root, s, 0, 0);
+        return s.substring(0, length);
+    }
+
+    private int search(Node x, String s, int d, int length) {
+        if (x == null) return length;
+        if (x.value != null) length = d;
+        if (d == s.length()) return length;
+        char c = s.charAt(d);
+        return search(x.next[c], s, d + 1, length);
+    }
+
+    /**
+     * 所有和s匹配的键（其中“.”能够匹配任意字符）
+     *
+     * @param pat
+     * @return
+     */
+    public Iterable<String> keysThatMatch(String pat) {
+        Queue<String> q = new Queue<>();
+        collect(root, "", pat, q);
+        return q;
+    }
+
+    private void collect(Node x, String pre, String pat, Queue<String> q) {
+        int d = pre.length();
+        if (x == null) return;
+        if (d == pat.length() && x.value != null) q.enqueue(pre);
+        if (d == pat.length()) return;
+
+        char next = pat.charAt(d);
+        for (char c = 0; c < R; c++) {
+            if (next == '.' || next == c) {
+                collect(x.next[c], pre + c, pat, q);
+            }
+        }
+    }
+
+    public void delete(String key) {
+        root = delete(root, key, 0);
+    }
+
+    private Node delete(Node x, String key, int d) {
+        if (x == null) return null;
+        if (d == key.length()) {
+            x.value = null;
+        } else {
+            char c = key.charAt(d);
+            x.next[c] = delete(x.next[c], key, d + 1);
+        }
+        if (x.value != null) return x;
+        for (char c = 0; c < R; c++) {
+            if (x.next[c] != null) return x;
+        }
+        return null;
+    }
+
 }
