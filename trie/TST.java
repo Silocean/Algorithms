@@ -1,6 +1,7 @@
 package trie;
 
 /**
+ * 基于三向单词查找树的符号表
  * Created by Silocean on 2016-05-28.
  */
 public class TST<Value> {
